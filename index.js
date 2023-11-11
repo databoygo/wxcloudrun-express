@@ -18,12 +18,9 @@ app.get("/", async (req, res) => {
 });
 // 首页
 app.get("/token", async (req, res) => {
-  const echostr = req.query.echostr
-  console.log(echostr)
-  res.send({
-    code: 0,
-    data: echostr
-  });
+  // const echostr = req.query.echostr
+  console.log('hello')
+  res.send(true);
 });
 // 更新计数
 app.post("/api/count", async (req, res) => {
