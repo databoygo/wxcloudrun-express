@@ -16,7 +16,15 @@ app.use(logger);
 app.get("/", async (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
-
+// 首页
+app.get("/token", async (req, res) => {
+  const echostr = req.query.echostr
+  console.log(echostr)
+  res.send({
+    code: 0,
+    data: echostr
+  });
+});
 // 更新计数
 app.post("/api/count", async (req, res) => {
   const { action } = req.body;
