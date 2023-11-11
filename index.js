@@ -17,10 +17,17 @@ app.get("/", async (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 // 首页
-app.get("/token", async (req, res) => {
+app.get("/token1", async (req, res) => {
   const echostr = req.query.echostr
-  console.log('hello', echostr)
-  res.send(echostr.split('×'));
+  console.log('hello1', echostr)
+  res.send(echostr);
+});
+app.get("/token2", async (req, res) => {
+  const echostr = req.query.echostr
+  console.log('hello2', echostr)
+  res.send({
+    echostr: echostr.split('x'),
+  });
 });
 // 更新计数
 app.post("/api/count", async (req, res) => {
